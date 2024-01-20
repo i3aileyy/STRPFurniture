@@ -5,7 +5,7 @@ Config.DecreaseSpeedControl = {`INPUT_CREATOR_RT`, `INPUT_NEXT_WEAPON`}
 
 
 Config.discordHook = true
-Config.webhookLink = ""
+Config.webhookLink = "https://discord.com/api/webhooks/1182404751535652924/5eDpfBXb51p05VSinhoUyazeIA1J2mVfXtqAJqFuL3DKoKfSUWSURMsQgUu2ijGES26y"
 Config.webhookColor = 16755884
 Config.webhookLanguage = {
     [1] = "Create new camp : ",
@@ -21,18 +21,18 @@ Config.RenderCampDistance = 100.0
 Config.FallUnderMap = false--If you fall under map while you building, enbale it. Not all framework was broken. :)
 
 Config.BannedCity = true
-Config.BannedTowns = {'Annesburg','SaintDenis', 'Armadillo', 'Blackwater', 'BeechersHope', 'Breaithwaite', 'Butcher', 'Caliga', 'Cornwall', 'Emerald', 'Lagras', 'Manzanita', 'Rhodes', 'Siska', 'StDenis', 'Strawberry', 'Tumbleweed', 'Valentine', 'Vanhorn', 'Wallace', 'Wapiti', 'AguasducesFarm', 'AguasdulcesRuins', 'AguasdulcesVilla', 'Manico'}
-Config.BannedText = "You cant build your camp in a city"
+Config.BannedTowns = {'Annesburg','SaintDenis', 'Armadillo', 'Blackwater', 'BeechersHope','Butcher','Cornwall', 'Emerald', 'Lagras', 'Rhodes', 'Siska', 'StDenis', 'Strawberry', 'Tumbleweed', 'Valentine', 'Wallace', 'Wapiti'}
+Config.BannedText = "You cant build your camp in a town"
 
 Config.Permit_Item = false
 Config.Permit_Item_Id = "MDT_Book"
 
-Config.StealtStorage = true
+Config.StealtStorage = false
 Config.BlockIfOffline = true
 Config.LockcpickItem = "lockpick"
 
 Config.MultipleCamps = true--If player can have more camps (true block multiplecamp)
-Config.RadiusForCamp = 50.0--Range for render camp, or build camp 
+Config.RadiusForCamp = 30.0--Range for render camp, or build camp 
 
 Config.Gum_Notify_Old = false
 Config.FirstName = ""--If you use old Notify you must add Image path
@@ -41,15 +41,15 @@ Config.SecondName = ""--If you use old Notify fro mme you must add Image Name
 Config.Gum_Notify_NUI = true
 Config.FarmingImage = "camping"
 
-Config.Camp_Load_Cmd = "camp_load"
+Config.Camp_Load_Cmd = "campload"
 Config.Camp_Manage = "camp"
 
-Config.CounterFix = 7--For every 10% for fix is Doubled fixing like if you have 20% you must fix 80% thats 8* Fix state items
+Config.CounterFix = 5--For every 10% for fix is Doubled fixing like if you have 20% you must fix 80% thats 8* Fix state items
 --Warning counter is from 0 like 0,7,14,21,28,35,42,49,56,63,70,77,84,91,98
 Config.FixItems = {
-    [1] = {"swood", 5, "Softwood"},
-    [2] = {"hwood", 5, "Hardwood"},
-    [3] = {"nails", 5, "Nails"},
+    [1] = {"swood", 3, "Softwood"},
+    [2] = {"hwood", 3, "Hardwood"},
+    [3] = {"nails", 3, "Nails"},
 }
 
 Config.PlaceMoreDown = {
@@ -61,11 +61,15 @@ Config.Fires = {
     p_campfire_win2_01x = {"p_campfirefresh01x", "Campfire_1", "Wood_Branch", "Malé ohniště", 1, 1.5},
     p_campfire03x_nofire = {"p_campfire03x", "Campfire_2", "Wood", "Velké ohniště", 5, 1.5},
     p_campfirecombined01x_off = {"p_campfirecombined01x", "Campfire_3", "Wood", "Kotlík", 5, 1.5},
-    s_splitfirelog01x_nofire = {"s_splitfirelog01x", "Campfire_4", "Wood", "Hořící poleno", 5, 1.5},
+    s_splitfirelog01x_nofire = {"s_splitfirelog01x", "Campfire_4", "Wood", "Hořící poleno", 5, 1.5},     
 }
 
 Config.SpawnProps = {
     ---PROP                                  ITEM ID (usable) label, PlaceTime, Clothes
+
+    --FIRES
+    p_campfire02x_script =                  { "crafting_fire", "Crafting Fire", 10, false },
+    p_campfirecombined03x =                 { "pota", "Pot", 10, false },
     --CHAIRS
     p_chair05x =                            {"p_chair05x", "Chair 03", 3, false},
     p_chair02x =                            {"p_chair02x", "Chair 02", 3, false},
@@ -77,6 +81,42 @@ Config.SpawnProps = {
     s_crateseat03x =                        {"s_crateseat03x", "Chair Crate 01", 3, false},
     p_chair_barrel04b =                     {"p_chair_barrel04b", "Chair Barrel 01", 3, false},
     p_chair_crate02x =                      {"p_chair_crate02x", "Chair Crate 02", 3, false},
+
+    p_windsorchair03x =                     { "wood_chair", "Wood Chair", 5, false },
+    p_chairoffice02x =                      { "leather_chair", "Leather Chair", 5, false },
+    p_chaircomfy23x =                       { "comfy_chair1", "Comfy Chair 1", 5, false },
+    p_chairComfy01x =                       { "comfy_chair4", "Comfy Chair 4", 5, false },
+    p_chaircomfy22x =                       { "comfy_chair6", "Comfy Chair 6", 5, false },
+    p_chairrustic05x =                      { "rustic_chair1", "Rustic Chair 1", 5, false },
+    p_ambchair01x =                         { "rustic_chair4", "Rustic Chair 4", 5, false },
+    p_woodendeskchair01x =                  { "office_chair1", "Office Chair 1", 5, false },
+    p_chairdesk02x =                        { "office_chair2", "Office Chair 2", 5, false },
+    p_victoriansofa01x =                    { "sofa1", "Sofa 1", 10, false },
+    p_couch10x =                            { "sofa3", "Sofa 3", 10, false },
+    p_couch05x =                            { "sofa4", "Sofa 4", 10, false },
+    p_couch06x =                            { "sofa5", "Sofa 5", 10, false },
+    p_couch11x =                            { "sofa6", "Sofa 6", 10, false },
+
+    --BENCHES
+    p_benchbear01x =                        { "bear_bench", "Bear Bench", 10, false },
+    p_bench_log06x =                        { "log_bencha", "Log Bench 1", 10, false },
+    p_bench_log05x =                        { "log_benchb", "Log Bench 2", 10, false },
+    p_bench20x =                            { "cloth_bench", "Cloth Bench", 10, false },
+    p_benchch01x =                          { "wooden_bench", "Wooden Bench", 10, false },
+    p_bench03x =                            { "bench1", "Bench 1", 10, false },
+    p_bench09x =                            { "bench2", "Bench 2", 10, false },
+    p_benchnbx02x =                         { "bench3", "Bench 3", 10, false },
+    p_seatbench01x =                        { "bench4", "Bench 4", 10, false },
+    p_bench17x =                            { "bench6", "Bench 6", 10, false },
+
+    --DRESSERS
+    p_dresser08x =                          { "bwdresser", "Brown Wood", 10, false },
+    p_dresser09x =                          { "bmdresser", "Brown Mirror", 10, false },
+    p_dresser01x =                          { "nightstand", "Night Stand", 10, false },
+    p_sidetable11x =                        { "side_table", "Side Table 1", 7, false },
+    p_sidetable09x =                        { "side_tablea", "Side Table 2", 7, false },
+    p_endtable01x =                         { "side_tableb", "Side Table 3", 7, false },
+
 
     --WICKER SET
     p_sit_chairwicker01a =                  {"p_sit_chairwicker01a", "Chair Wicker 01", 5, false},
@@ -97,6 +137,16 @@ Config.SpawnProps = {
     p_table13x =                            {"p_table13x", "Table 13", 5, false},
     p_table14x =                            {"p_table14x", "Table 14", 5, false},
 
+    p_cs_mtsaloontable =                    { "round_table", "Round Table", 10, false },
+    p_table48x =                            { "standard_table", "Table", 10, false },
+    --p_table41x = { "rectangle_table", "Rectangle Table", 10, false },
+    --p_table11x = { "timber_table", "Timber Table", 10, false },
+    p_tabledining03x =                      { "longtable1", "Long Table 1", 10, false },
+    p_table41x =                            { "table1", "Table 1", 10, false },
+    p_tabledining05x =                      { "table2", "Table 2", 10, false },
+    p_table_cs34_sml =                      { "roundtable1", "Round Table 1", 10, false },
+    p_table_saloon01x =                     { "roundtable2", "Round Table 2", 10, false },
+    p_tablerndnwhite01x =                   { "roundtable3", "Round Table 3", 10, false },
 
     -- TENTS
     p_amb_tent01x  =                        {"p_amb_tent01x", "Tent 01", 10, false},
@@ -120,6 +170,13 @@ Config.SpawnProps = {
     s_craftedbed01x =                       {"s_craftedbed01x", "Bed Crafted 01", 10, false},
     s_pro_bunkbeds01x =                     {"s_pro_bunkbeds01x", "Bunk Beds 01", 10, false},
     p_bed08x =                              {"p_bed08x", "Double Bed 01", 10, false},
+    p_bed09x =                              { "obed", "Old bed", 10, false },
+    p_bedbunk03x =                          { "bunkbed", "bunk bed", 5, false },
+    p_cs_roc_hse_bed =                      { "singlebed", "single bed", 5, false },
+    p_bed20x =                              { "fancydouble", "fancy double", 10, false },
+    p_cs_ann_wrkr_bed01x =                  { "singlebed1", "Single Bed 1", 5, false },
+    p_cot01x =                              { "cot1", "Cot 1", 5, false },
+
 
     -- PLANTS
     p_exoticprops22x =                      {"p_exoticprops22x", "Exotic Plants 01", 3, false},
@@ -134,10 +191,91 @@ Config.SpawnProps = {
     p_lantern09xmoths =                     {"p_lantern09xmoths", "Lantern 01", 3, false},
     p_lantern05x =                          {"p_lantern05x", "Lantern 05", 3, false},
     p_lantern04xlowfuel =                   {"p_lantern04xlowfuel", "Lantern 04", 3, false},
+    --p_lantern05x = { "lanterna", "Lantern", 10, false },
+    p_candlelampcombo01x =                  { "dbcandle", "Dbl Candle", 5, false },
+    p_candlestick03x =                      { "candlea", "Candle", 5, false },
+    p_candlegroup04x =                      { "smallmcandle", "Small Melted Candle", 5, false },
+    p_candlebot01x =                        { "bcandle", "Bottle Candle", 5, false },
+    p_lampstanding02x =                     { "stand_lamp1", "Standing Lamp 1", 5, false },
+    p_lampstanding09x =                     { "stand_lamp2", "Standing Lamp 2", 5, false },
+    p_lampwall01x =                         { "wall_lamp1", "Wall Lamp 1", 5, false },
+    p_lampwall05x =                         { "wall_lamp2", "Wall Lamp 2", 5, false },
+    p_lampwall09x =                         { "wall_lamp3", "Wall Lamp 3", 5, false },
+    --p_campfirecombined03x = { "campfirepot2", "Campfire with pot 2", 10, false },
+    p_lamphanging13x =                      { "hanglamp1", "Hanging Lamp 1", 5, false },
+    p_lamphanging06x =                      { "hanglamp3", "Hanging Lamp 3", 5, false },
+    p_lamphanging02x =                      { "hanglamp4", "Hanging Lamp 4", 5, false },
+
+    --Sinks
+    p_drysink01x =              {"sink1", "Sink 1", 30, false},
+    p_drysink03x =              {"sink2", "Sink 2", 30, false},
+    p_sink02x =              {"sink3", "Sink 3", 30, false},
+
 
     -- PROPS
     mp005_p_collectorwagon01 =              {"mp005_p_collectorwagon01", "Gypsy Wagon", 30, false},
     mp005_s_posse_tent_collector07x  =      {"mp005_s_posse_tent_collector07x", "Collector Tent", 30, false},
+    p_waterpump01x =                        { "water_pump", "Water Pump", 10, false },
+    p_group_flowertable01 =                 { "flowerboxes", "Flower Boxes", 5, false },
+    p_ambpelt01x =                          { "deer_pelt", "Deer Pelt", 5, false },
+    p_ambpelt03x =                          { "coyote_pelt", "Coyote Pelt", 5, false },
+    p_blanketbox01x =                       { "blanket_box", "Blanket Box", 5, false },
+    p_gunbarrelset01x =                     { "gun_barrel", "Gun Barrel", 5, false },
+    p_barrelapples01x =                     { "apple_barrel", "Apple Barrel", 5, false },
+    p_basketapple01x =                      { "apple_basket", "Apple Basket", 5, false },
+    p_re_checkpoint02x_food =               { "food_barrel", "Food Barrel", 5, false },
+    p_washtub01x =                          { "washtub", "Wash Tub", 5, false },
+    p_clothesline01x =                      { "clothes_line", "Clothes Line", 5, false },
+    p_group_barrelcor01 =                   { "tool_barrel", "Tool Barrel", 5, false },
+    p_taxidermycoyote03x =                  { "coyote_taxidermy", "Coyote Taxidermy", 10, false },
+    p_taxidermypheasant02x =                { "pheasant_taxidermy", "Pheasant Taxidermy", 10, false },
+    p_taxidermydeer01x =                    { "deer_taxidermy", "Deer Taxidermy", 15, false },
+    p_cougar_01x =                          { "cougar_taxidermy", "Cougar Taxidermy", 15, false },
+    p_taxidermyvulture01x =                 { "vulture_taxidermy", "Vulture Taxidermy", 10, false },
+    p_flag05x =                             { "usaflagfurn", "USA FLAG", 10, false },
+    p_grindingwheel01x =                    { "grindingwheel", "Grinding Wheel", 10, false},
+    p_phonograph01x =                       { "phonograph", "Phonograph", 10, false},
+    mp006_p_xmastree01x =                   { "xmastree", "Christmas Tree", 10, false},
+    mp001_p_mp_still02x=                    {"mp001_p_mp_still02x", "Moonshine Still", 30, false},
+    
+    --OFFICE
+    p_desk07x =                   { "p_desk07x", "Desk 1", 10, false},
+    p_desk09x =                   { "p_desk09x", "Desk 2", 10, false},
+    p_desk14x =                   { "p_desk14x", "Desk 3", 10, false},
+    p_desk13x =                   { "p_desk13x", "Desk 4", 10, false},
+    p_desk08x =                   { "p_desk08x", "Desk 5", 10, false},
+    p_desk01x =                   { "p_desk01x", "Desk 6", 10, false},
+    p_fanceiling01ax =            { "p_fanceiling01ax", "Fan Ceiling", 10, false},
+    p_fandesk01x =                { "p_fandesk01x", "Desk Fan", 10, false},
+    p_coatstand01x =              { "p_coatstand01x", "Coat Stand 1", 10, false},
+    p_doc_coatstandrack01x =      { "p_doc_coatstandrack01x", "Coat Stand 2", 10, false},
+    p_globe02x =                  { "p_globe02x", "Globe 1", 10, false},
+    mp001_p_mp_globe02x =         { "mp001_p_mp_globe02x", "Globe 2", 10, false},
+    p_nbmpiano01x =               { "p_nbmpiano01x", "Piano 1", 10, false},
+    p_nbxpiano01x =               { "p_nbxpiano01x", "Piano 2", 10, false},
+    p_piano02x =                  { "p_piano02x", "Piano 3", 10, false},
+    p_piano03x =                  { "p_piano03x", "Piano 4", 10, false},
+    sha_man_piano01 =             { "sha_man_piano01", "Piano 5", 10, false},
+    p_pianochair01x =             { "p_pianochair01x", "Piano Stool 1", 10, false},
+    p_benchpiano02x =             { "p_benchpiano02x", "Piano Stool 2", 10, false},
+    p_gen_benchpiano01x_tc01 =    { "p_gen_benchpiano01x_tc01", "Piano Stool 3", 10, false},
+    p_cs_chessset01x =            { "p_cs_chessset01x", "Chess Board", 10, false},
+    p_filecabinet02x =            { "p_filecabinet02x", "Filing Cabinet 1", 10, false},
+    p_filecabinet03x =            { "p_filecabinet03x", "Filing Cabinet 2", 10, false},
+    p_filecabinet67x =            { "p_filecabinet67x", "Filing Cabinet 3", 10, false},
+    p_filecabinet68x =            { "p_filecabinet68x", "Filing Cabinet 4", 10, false},
+    p_filecabinetdoctor01x =      { "p_filecabinetdoctor01x", "Filing Cabinet 5", 10, false},
+    p_filecabinet04bx =           { "p_filecabinet04bx", "Filing Cabinet 6", 10, false},
+    p_gunrack02x =                { "p_gunrack02x", "Gun Case 1", 10, false},
+    p_gunrack03x =                { "p_gunrack03x", "Gun Case 2", 10, false},
+    p_clock09x =                  { "p_clock09x", "Clock 1", 10, false},
+    p_clock10x =                  { "p_clock10x", "Clock 2", 10, false},
+    val_bank_clock =              { "val_bank_clock", "Clock 3", 10, false},
+    p_telescope01x =              { "p_telescope01x", "Telescope", 10, false},
+    p_gatorgunrack01x =           { "p_gatorgunrack01x", "Mounted Gator Head", 10, false},
+
+
+
  
 }
 
@@ -150,22 +288,22 @@ Config.Storage_Box = {
 }
 
 Config.Max_Items_In_Storage = 200
-Config.MaxProps = 50
+Config.MaxProps = 500
 Config.Language = {
     [1] = {text = "Camp",},
-    [2] = {text = "Built props",},
-    [3] = {text = "Key management",},
-    [4] = {text = "State :",},
-    [5] = {text = "Show build circle",},
-    [6] = {text = "Give keys",},
-    [7] = {text = "Your camp",},
-    [8] = {text = "Shared camp",},
+    [2] = {text = "Built Furniture",},
+    [3] = {text = "Add Camp Members",},
+    [4] = {text = "Camp Condition :",},
+    [5] = {text = "Show Camp Radius",},
+    [6] = {text = "Give Access (Click on Player)",},
+    [7] = {text = "My Camp",},
+    [8] = {text = "Shared Camp",},
     [9] = {text = "Clothing",},
-    [10] = {text = "Storage box",},
-    [11] = {text = "Turn on fire",},
-    [12] = {text = "Turn off fire",},
+    [10] = {text = "Storage Box",},
+    [11] = {text = "Light Fire",},
+    [12] = {text = "Extinguish Fire",},
     [13] = {text = "Prepare to build",},
-    [14] = {text = "Locked chest",},
+    [14] = {text = "Locked Chest",},
     [15] = {text = "You dont need to repair",},
     [16] = {text = "Do you want to repair your camp?",},
     [17] = {text = "Yes",},
