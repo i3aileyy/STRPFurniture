@@ -1,0 +1,198 @@
+Config = {}
+--Protect for scroll if player place props
+Config.IncreaseSpeedControl = {`INPUT_CREATOR_LT`, `INPUT_PREV_WEAPON`}
+Config.DecreaseSpeedControl = {`INPUT_CREATOR_RT`, `INPUT_NEXT_WEAPON`}
+
+
+Config.discordHook = true
+Config.webhookLink = ""
+Config.webhookColor = 16755884
+Config.webhookLanguage = {
+    [1] = "Create new camp : ",
+    [2] = "Removed : ",
+    [3] = "Coords : ",
+    [4] = "Add new prop to camp : ",
+    [5] = "Fix his camp : ",
+    [6] = "Switch clothe",  
+}
+
+
+Config.RenderCampDistance = 100.0
+Config.FallUnderMap = false--If you fall under map while you building, enbale it. Not all framework was broken. :)
+
+Config.BannedCity = true
+Config.BannedTowns = {'Annesburg','SaintDenis', 'Armadillo', 'Blackwater', 'BeechersHope', 'Breaithwaite', 'Butcher', 'Caliga', 'Cornwall', 'Emerald', 'Lagras', 'Manzanita', 'Rhodes', 'Siska', 'StDenis', 'Strawberry', 'Tumbleweed', 'Valentine', 'Vanhorn', 'Wallace', 'Wapiti', 'AguasducesFarm', 'AguasdulcesRuins', 'AguasdulcesVilla', 'Manico'}
+Config.BannedText = "You cant build your camp in a city"
+
+Config.Permit_Item = false
+Config.Permit_Item_Id = "MDT_Book"
+
+Config.StealtStorage = true
+Config.BlockIfOffline = true
+Config.LockcpickItem = "lockpick"
+
+Config.MultipleCamps = true--If player can have more camps (true block multiplecamp)
+Config.RadiusForCamp = 50.0--Range for render camp, or build camp 
+
+Config.Gum_Notify_Old = false
+Config.FirstName = ""--If you use old Notify you must add Image path
+Config.SecondName = ""--If you use old Notify fro mme you must add Image Name
+
+Config.Gum_Notify_NUI = true
+Config.FarmingImage = "camping"
+
+Config.Camp_Load_Cmd = "camp_load"
+Config.Camp_Manage = "camp"
+
+Config.CounterFix = 7--For every 10% for fix is Doubled fixing like if you have 20% you must fix 80% thats 8* Fix state items
+--Warning counter is from 0 like 0,7,14,21,28,35,42,49,56,63,70,77,84,91,98
+Config.FixItems = {
+    [1] = {"swood", 5, "Softwood"},
+    [2] = {"hwood", 5, "Hardwood"},
+    [3] = {"nails", 5, "Nails"},
+}
+
+Config.PlaceMoreDown = {
+    s_wap_rainsfalls = 0.70,
+    s_tent_maropen01b = 0.20,
+}
+--------Prop                   Fired prop            ID           For now nothing        Name    Time Range for clear grass etc
+Config.Fires = {
+    p_campfire_win2_01x = {"p_campfirefresh01x", "Campfire_1", "Wood_Branch", "Malé ohniště", 1, 1.5},
+    p_campfire03x_nofire = {"p_campfire03x", "Campfire_2", "Wood", "Velké ohniště", 5, 1.5},
+    p_campfirecombined01x_off = {"p_campfirecombined01x", "Campfire_3", "Wood", "Kotlík", 5, 1.5},
+    s_splitfirelog01x_nofire = {"s_splitfirelog01x", "Campfire_4", "Wood", "Hořící poleno", 5, 1.5},
+}
+
+Config.SpawnProps = {
+    ---PROP                                  ITEM ID (usable) label, PlaceTime, Clothes
+    --CHAIRS
+    p_chair05x =                            {"p_chair05x", "Chair 03", 3, false},
+    p_chair02x =                            {"p_chair02x", "Chair 02", 3, false},
+    p_chair23x =                            {"p_chair23x", "Chair 23", 3, false},
+    p_chair24x =                            {"p_chair24x", "Chair 24", 3, false},
+    p_chair25x =                            {"p_chair25x", "Chair 25", 3, false},
+    p_chairrocking02x =                     {"p_chairrocking02x", "Chair Rocking 01", 3, false},
+    p_chairporch01x =                       {"p_chairporch01x", "Chair Porch 01", 3, false},
+    s_crateseat03x =                        {"s_crateseat03x", "Chair Crate 01", 3, false},
+    p_chair_barrel04b =                     {"p_chair_barrel04b", "Chair Barrel 01", 3, false},
+    p_chair_crate02x =                      {"p_chair_crate02x", "Chair Crate 02", 3, false},
+
+    --WICKER SET
+    p_sit_chairwicker01a =                  {"p_sit_chairwicker01a", "Chair Wicker 01", 5, false},
+    p_sit_chairwicker01b =                  {"p_sit_chairwicker01b", "Chair Wicker 02", 5, false},
+    p_sit_chairwicker01c =                  {"p_sit_chairwicker01c", "Chair Wicker 03", 5, false},
+    p_couchwicker01x =                      {"p_couchwicker01x", "Couch Wicker 01", 5, false},
+    p_boxlrgwicker01x =                     {"p_boxlrgwicker01x", "Box Wicker 01", 5, false},
+
+    -- TABLES
+    p_cratetable01x =                       {"p_cratetable01x", "Table Crate 01", 5, false},
+    p_gen_table01x =                        {"p_gen_table01x", "Table 01", 5, false},
+    p_gen_table02x =                        {"p_gen_table02x", "Table 02", 5, false},
+    p_gen_table03x =                        {"p_gen_table03x", "Table 03", 5, false},
+    p_gen_table04x =                        {"p_gen_table04x", "Table 04", 5, false},
+    p_table05x =                            {"p_table05x", "Table 05", 5, false},
+    p_table10x =                            {"p_table10x", "Table 10", 5, false},
+    p_table11x =                            {"p_table11x", "Table 11", 5, false},
+    p_table13x =                            {"p_table13x", "Table 13", 5, false},
+    p_table14x =                            {"p_table14x", "Table 14", 5, false},
+
+
+    -- TENTS
+    p_amb_tent01x  =                        {"p_amb_tent01x", "Tent 01", 10, false},
+    p_amb_tent02x =                         {"p_amb_tent02x", "Tent 02", 10, false},
+    p_ambtentdebris01x =                    {"p_ambtentdebris01x", "Tent Debris 01", 10, false},
+    p_ambtentdebris02x =                    {"p_ambtentdebris02x ", "Tent Debris 02", 10, false},
+    p_ambtenthide01x =                      {"p_ambtenthide01x", "Tent Hide 01", 10, false},
+    p_ambtentpatch01b =                     {"p_ambtentpatch01b", "Tent Patch 01", 10, false},
+    p_ambtentpatch01x =                     {"p_ambtentpatch01x", "Tent Patch 02", 10, false},
+    p_ambtentsticks01x =                    {"p_ambtentsticks01x", "Tent Sticks 01", 10, false},
+    p_ambtentswamp01x =                     {"p_ambtentswamp01x", "Tent Swamp 01", 10, false},
+    p_tent_leento03x =                      {"p_tent_leento03x", "Tent Leento 03", 15, false},
+    p_tent_leento04x =                      {"p_tent_leento04x", "Tent Leento 04", 15, false},
+    p_tent0101x =                           {"p_tent0101x", "Large Tent 01", 20, false},
+    s_wap_rainsfalls =                      {"s_wap_rainsfalls", "Tipi 01", 20, false},
+
+    -- BEDS
+    p_bedrollopen03x =                      {"p_bedrollopen03x", "Bedroll 01", 10, false},
+    p_gangbed01x =                          {"p_gangbed01x", "Bed 01", 10, false},
+    p_bedindian02x =                        {"p_bedindian02x", "Bed Indian 01", 10, false},
+    s_craftedbed01x =                       {"s_craftedbed01x", "Bed Crafted 01", 10, false},
+    s_pro_bunkbeds01x =                     {"s_pro_bunkbeds01x", "Bunk Beds 01", 10, false},
+    p_bed08x =                              {"p_bed08x", "Double Bed 01", 10, false},
+
+    -- PLANTS
+    p_exoticprops22x =                      {"p_exoticprops22x", "Exotic Plants 01", 3, false},
+    p_exoticprops23x =                      {"p_exoticprops23x", "Exotic Plants 02", 3, false},
+    p_plantpotnbx04x =                      {"p_plantpotnbx04x", "Plant Pot 01", 3, false},
+    p_pot_plant_05b =                       {"p_pot_plant_05b", "Plant Pot 02", 3, false},
+    p_pot_plant_7b =                        {"p_pot_plant_7b", "Plant Pot 03", 3, false},
+    
+    -- LIGHTS
+    p_torchpost01x =                        {"p_torchpost01x", "Torch Post 01", 5, false},
+    p_lanternstick09x =                     {"p_lanternstick09x", "Lantern Post 01", 5, false},
+    p_lantern09xmoths =                     {"p_lantern09xmoths", "Lantern 01", 3, false},
+    p_lantern05x =                          {"p_lantern05x", "Lantern 05", 3, false},
+    p_lantern04xlowfuel =                   {"p_lantern04xlowfuel", "Lantern 04", 3, false},
+
+    -- PROPS
+    mp005_p_collectorwagon01 =              {"mp005_p_collectorwagon01", "Gypsy Wagon", 30, false},
+    mp005_s_posse_tent_collector07x  =      {"mp005_s_posse_tent_collector07x", "Collector Tent", 30, false},
+ 
+}
+
+
+Config.Storage_Box = {
+    ["s_cvan_chest02"] = 50,
+    ["p_storagebox01x"] = 100,
+    ["p_chestmedlog01x"] = 200,
+    ["p_chestmedhunt01x"] = 300,
+}
+
+Config.Max_Items_In_Storage = 200
+Config.MaxProps = 50
+Config.Language = {
+    [1] = {text = "Camp",},
+    [2] = {text = "Built props",},
+    [3] = {text = "Key management",},
+    [4] = {text = "State :",},
+    [5] = {text = "Show build circle",},
+    [6] = {text = "Give keys",},
+    [7] = {text = "Your camp",},
+    [8] = {text = "Shared camp",},
+    [9] = {text = "Clothing",},
+    [10] = {text = "Storage box",},
+    [11] = {text = "Turn on fire",},
+    [12] = {text = "Turn off fire",},
+    [13] = {text = "Prepare to build",},
+    [14] = {text = "Locked chest",},
+    [15] = {text = "You dont need to repair",},
+    [16] = {text = "Do you want to repair your camp?",},
+    [17] = {text = "Yes",},
+    [18] = {text = "No",},
+    [19] = {text = "What do you want to do with this outfit?",},
+    [20] = {text = "Select",},
+    [21] = {text = "Delete",},
+    [22] = {text = "Place",},
+    [23] = {text = "Pick up",},
+    [24] = {text = "Interact",},
+    [25] = {text = "Open",},
+    [26] = {text = "Clothing",},
+    [27] = {text = "Cook",},
+    [28] = {text = "Interact",},
+    [29] = {text = "Lockpick",},
+    [30] = {text = "You dont have permit item for build camp.",},
+    [31] = {text = "You cant lockpick this chest.",},
+    [32] = {text = "You dont have lockpick.",},
+    [33] = {text = "you cant build near another camp. Go further away.",},
+    [34] = {text = "You need :",},
+    [35] = {text = "You need : ",},
+    [80] = {text = "You can only build 1 storage box at camp. ",},
+    [81] = {text = "You cant build in city. ",},
+    [82] = {text = "You can have only 1 camp.",},
+    [83] = {text = "You are not in your camp, or you dont have camp.",},
+    [84] = {text = "This player has keys",},
+    [85] = {text = "You have already reached the prop limit",},
+    [86] = {text = "Maximum",},
+    [87] = {text = "Do you want to destroy your camp?"},
+}
